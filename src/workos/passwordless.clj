@@ -5,11 +5,13 @@
 ;; (builder email)
 (defn builder
   "Creates an instance of [CreateSessionOptions] with the given builder parameters"
-  [email]
+  [email
+   & {:keys [redirect-url]
+      :or {redirect-url config/redirect-url}}]
   (->
    (PasswordlessApi$CreateSessionOptions/builder)
    (.email email)
-   (.redirectUri config/redirect-url)
+   (.redirectUri redirect-url)
    (.build)))
 
 ;; (send-magic-link (new WorkOS) email)
