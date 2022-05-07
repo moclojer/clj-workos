@@ -19,5 +19,8 @@
   [connection-id
    & {:keys [redirect-url]
       :or {redirect-url config/redirect-url}}]
-  (.getAuthorizationUrl (.-sso (WorkOS. (:secret config/apikey)))
-                        connection-id redirect-url))
+  (->
+   (.-sso (WorkOS. (:secret config/apikey)))
+   (.getAuthorizationUrl (:client config/apikey) redirect-url)
+   (.connection connection-id)
+   (.build)))
