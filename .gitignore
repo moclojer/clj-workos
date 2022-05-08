@@ -13,3 +13,7 @@ pom.xml.asc
 .nrepl-port
 .cpcache/
 .clj-kondo/.cache
+.env
+
+## example code
+example/target

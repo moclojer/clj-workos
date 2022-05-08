@@ -1,0 +1,7 @@
+{:paths   ["src"]
+ :deps    {org.clojure/clojure          {:mvn/version "1.10.2"}
+           clj-workos/clj-workos        {:local/root "../"}}
+ :aliases {;; Run project
+           ;; clj -X:run
+           :run       {:ns-default example.core
+                       :exec-fn    example.core/-main}}}
