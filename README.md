@@ -1,6 +1,6 @@
 # clj-workos
 
-Clojure(Script) wrapper for [WorkOS](https://workos.com/), based [workos-kotlin](https://github.com/workos/workos-kotlin)
+Clojure(Script) wrapper for [WorkOS](https://workos.com/), [workos-kotlin](https://github.com/workos/workos-kotlin) based
 
 ## example
 
