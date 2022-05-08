@@ -1,4 +1,5 @@
-(ns workos.config)
+(ns workos.config
+  (:import (com.workos WorkOS)))
 
 (def apikey
   {:secret (System/getenv "WORKOS_API_KEY")
@@ -6,3 +7,8 @@
 
 (def redirect-url
   (System/getenv "WORKOS_REDIRECT_URL"))
+
+(def *workos
+  "WorkoOS instance initiated"
+  (delay
+   (WorkOS. (:secret apikey))))

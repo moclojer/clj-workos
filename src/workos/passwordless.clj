@@ -2,7 +2,7 @@
   (:require [workos.config :as config])
   (:import (com.workos.passwordless PasswordlessApi$CreateSessionOptions)))
 
-;; (builder email)
+;; (builder "email")
 (defn builder
   "Creates an instance of [CreateSessionOptions] with the given builder parameters"
   [email
@@ -14,13 +14,14 @@
    (.redirectUri redirect-url)
    (.build)))
 
-;; (send-magic-link (new WorkOS) email)
+;; (send-magic-link "email")
 (defn send-magic-link
   "Sends a passwordless session created with [createSession] via email.
    In the case of Magic Link, WorkOS will send an e-mail to the user with a unique
    link to authenticate with."
-  [workos, email]
-  (let [session  (.createSession
+  [email]
+  (let [workos @config/*workos
+        session  (.createSession
                   (.-passwordless workos)
                   (builder email))
         send (.sendSession (.-passwordless workos) (.id session))]
