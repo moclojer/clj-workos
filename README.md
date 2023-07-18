@@ -2,6 +2,8 @@
 
 Clojure(Script) wrapper for [WorkOS](https://workos.com/), [workos-kotlin](https://github.com/workos/workos-kotlin) based
 
+> ⚠️ project is no longer being maintained
+
 ## example
 
 **envs:**
